@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>Some title for this page</title>
+		<script src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"></script>
+		<script src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"></script>
+    </head>
+    <body>
+        <div id="content">
+            Nothing to see here.
+        </div>
+        <script type="text/javascript">
+			class List extends React.Component {
+				render() {
+				  const attributes = { style: {color: 'blue'}}
+				  const elements = this.props.data.map(
+					(name,index)=>React.createElement(myIndividualItem, {name: name, key: index})
+				  )
+				  return React.createElement('ol', 
+					attributes,
+					elements)
+				}
+			  }
+		
+			  class myIndividualItem extends React.Component {
+				render() {
+				  const style = {fontSize: 24, fontFamily: 'Times'}
+				  return React.createElement('li', {style: style}, this.props.name)
+				}
+			  }
+			  
+			  const data = ['Azat', 'Rob', 'Patrick', 'Laura']
+			  ReactDOM.render(
+				React.createElement(List, {data: data}),
+				document.getElementById('content')
+			  )
+        </script>
+    </body>
+</html>

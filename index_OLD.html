@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>Some title for this page</title>
+		<script src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"></script>
+		<script src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"></script>
+    </head>
+    <body>
+        <div id="content">
+            Nothing to see here.
+        </div>
+        <div id="content3">
+            Nothing to see here.
+        </div>
+        <div id="content2">
+            Nothing to see here.
+        </div>
+        <script type="text/javascript">
+			const reactElementTwo = React.createElement('button',{},'click it')
+			const reactElementThree = React.createElement('input',{type:'input',placeholder:'enter some text',value:'something'},)
+			const reactElement = React.createElement('h1' ,{id:"helloWorld",style:{color:'blue'}},'Hello world', reactElementThree,reactElementTwo)
+			ReactDOM.render(
+				reactElement,
+				document.getElementById('content')
+			)
+			ReactDOM.render(
+				reactElementTwo,
+				document.getElementById('content2')
+			)
+			ReactDOM.render(
+				reactElementThree,
+				document.getElementById('content3')
+			)
+        </script>
+    </body>
+</html>
